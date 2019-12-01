@@ -27,7 +27,7 @@
     </label>
 
     <!-- Input for residency_program_id start -->
-    <input type="text" id="residency_program_id" name="residency_program_id" class="form-control" value="<%= @interview_invite.residency_program_id %>">
+    <%= select_tag(:residency_program_id, options_from_collection_for_select(ResidencyProgram.all, :id, :state, @interview_invite.residency_program_id), :class => "form-control") %>
     <!-- Input for residency_program_id end -->
   </div>
   <!-- Label and input for residency_program_id end -->
