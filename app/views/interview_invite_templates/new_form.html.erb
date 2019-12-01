@@ -1,0 +1,57 @@
+<h1>
+  Add a new interview invite
+</h1>
+
+
+<hr>
+
+<!-- Form interview_invite start -->
+<form action="/create_interview_invite" method="post">
+<!-- Form interview_invite end -->
+
+  <!-- Label and input for residency_program_id start -->
+  <div class="form-group">
+    <label for="residency_program_id">
+      Residency program
+    </label>
+
+    <!-- Input for residency_program_id start -->
+    <input type="text" id="residency_program_id" name="residency_program_id" class="form-control">
+    <!-- Input for residency_program_id end -->
+  </div>
+  <!-- Label and input for residency_program_id end -->
+
+  <!-- Label and input for invite_received_date start -->
+  <div class="form-group">
+    <label for="invite_received_date">
+      Invite received date
+    </label>
+
+    <!-- Input for invite_received_date start -->
+    <input type="text" id="invite_received_date" name="invite_received_date" class="form-control">
+    <!-- Input for invite_received_date end -->
+  </div>
+  <!-- Label and input for invite_received_date end -->
+
+  <!-- Label and input for invitee_id start -->
+  <div class="form-group">
+    <label for="invitee_id">
+      Invitee
+    </label>
+
+    <!-- Input for invitee_id start -->
+    <input type="text" id="invitee_id" name="invitee_id" class="form-control">
+    <!-- Input for invitee_id end -->
+  </div>
+  <!-- Label and input for invitee_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create interview invite
+  </button>
+</form>
+
+<hr>
+
+<a href="/interview_invites">
+  Go back
+</a>

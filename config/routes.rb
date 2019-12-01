@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Interview invite resource:
+
+  # CREATE
+  get("/interview_invites/new", { :controller => "interview_invites", :action => "new_form" })
+  post("/create_interview_invite", { :controller => "interview_invites", :action => "create_row" })
+
+  # READ
+  get("/interview_invites", { :controller => "interview_invites", :action => "index" })
+  get("/interview_invites/:id_to_display", { :controller => "interview_invites", :action => "show" })
+
+  # UPDATE
+  get("/interview_invites/:prefill_with_id/edit", { :controller => "interview_invites", :action => "edit_form" })
+  post("/update_interview_invite/:id_to_modify", { :controller => "interview_invites", :action => "update_row" })
+
+  # DELETE
+  get("/delete_interview_invite/:id_to_remove", { :controller => "interview_invites", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Interview resource:
 
   # CREATE
