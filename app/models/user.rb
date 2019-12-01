@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :interview_invites,
+             :foreign_key => "invitee_id"
+
   has_many   :interviews,
              :foreign_key => "interviewee_id"
 
