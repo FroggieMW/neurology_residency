@@ -14,7 +14,7 @@
     </label>
 
     <!-- Input for interviewee_id start -->
-    <input type="text" id="interviewee_id" name="interviewee_id" class="form-control" value="<%= @interview.interviewee_id %>">
+    <%= select_tag(:interviewee_id, options_from_collection_for_select(User.all, :id, :email, @interview.interviewee_id), :class => "form-control") %>
     <!-- Input for interviewee_id end -->
   </div>
   <!-- Label and input for interviewee_id end -->
