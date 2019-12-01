@@ -33,6 +33,22 @@ class InterviewsController < ApplicationController
     end
   end
 
+  def create_row_from_residency_program
+    @interview = Interview.new
+
+    @interview.residency_program_id = params.fetch("residency_program_id")
+    @interview.interviewee_id = params.fetch("interviewee_id")
+    @interview.interview_date = params.fetch("interview_date")
+
+    if @interview.valid?
+      @interview.save
+
+      redirect_to("/residency_programs/#{@interview.residency_program_id}", notice: "Interview created successfully.")
+    else
+      render("interview_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @interview = Interview.find(params.fetch("prefill_with_id"))
 

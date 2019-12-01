@@ -6,6 +6,8 @@ class ResidencyProgramsController < ApplicationController
   end
 
   def show
+    @interview_invite = InterviewInvite.new
+    @interview = Interview.new
     @residency_program = ResidencyProgram.find(params.fetch("id_to_display"))
 
     render("residency_program_templates/show.html.erb")

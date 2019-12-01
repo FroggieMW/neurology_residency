@@ -33,6 +33,22 @@ class InterviewInvitesController < ApplicationController
     end
   end
 
+  def create_row_from_residency_program
+    @interview_invite = InterviewInvite.new
+
+    @interview_invite.residency_program_id = params.fetch("residency_program_id")
+    @interview_invite.invite_received_date = params.fetch("invite_received_date")
+    @interview_invite.invitee_id = params.fetch("invitee_id")
+
+    if @interview_invite.valid?
+      @interview_invite.save
+
+      redirect_to("/residency_programs/#{@interview_invite.residency_program_id}", notice: "InterviewInvite created successfully.")
+    else
+      render("interview_invite_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @interview_invite = InterviewInvite.find(params.fetch("prefill_with_id"))
 

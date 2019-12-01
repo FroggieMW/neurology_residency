@@ -1,0 +1,37 @@
+<!-- Form interview start -->
+<form action="/create_interview_from_residency_program" method="post">
+<!-- Form interview end -->
+
+  <!-- Label and input for residency_program_id start -->
+  <!-- Input for residency_program_id start -->
+  <input type="hidden" name="residency_program_id" value="<%= @residency_program.id %>">
+  <!-- Input for residency_program_id end -->
+
+  <!-- Label and input for interviewee_id start -->
+  <div class="form-group">
+    <label for="interviewee_id">
+      Interviewee
+    </label>
+
+    <!-- Input for interviewee_id start -->
+    <input type="text" id="interviewee_id" name="interviewee_id" class="form-control" value="<%= @interview.interviewee_id %>">
+    <!-- Input for interviewee_id end -->
+  </div>
+  <!-- Label and input for interviewee_id end -->
+
+  <!-- Label and input for interview_date start -->
+  <div class="form-group">
+    <label for="interview_date">
+      Interview date
+    </label>
+
+    <!-- Input for interview_date start -->
+    <input type="text" id="interview_date" name="interview_date" class="form-control" value="<%= @interview.interview_date %>">
+    <!-- Input for interview_date end -->
+  </div>
+  <!-- Label and input for interview_date end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create interview
+  </button>
+</form>
