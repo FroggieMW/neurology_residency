@@ -1,0 +1,65 @@
+class InterviewsController < ApplicationController
+  def index
+    @interviews = Interview.all
+
+    render("interview_templates/index.html.erb")
+  end
+
+  def show
+    @interview = Interview.find(params.fetch("id_to_display"))
+
+    render("interview_templates/show.html.erb")
+  end
+
+  def new_form
+    @interview = Interview.new
+
+    render("interview_templates/new_form.html.erb")
+  end
+
+  def create_row
+    @interview = Interview.new
+
+    @interview.residency_program_id = params.fetch("residency_program_id")
+    @interview.interviewee_id = params.fetch("interviewee_id")
+    @interview.interview_date = params.fetch("interview_date")
+
+    if @interview.valid?
+      @interview.save
+
+      redirect_back(:fallback_location => "/interviews", :notice => "Interview created successfully.")
+    else
+      render("interview_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def edit_form
+    @interview = Interview.find(params.fetch("prefill_with_id"))
+
+    render("interview_templates/edit_form.html.erb")
+  end
+
+  def update_row
+    @interview = Interview.find(params.fetch("id_to_modify"))
+
+    @interview.residency_program_id = params.fetch("residency_program_id")
+    @interview.interviewee_id = params.fetch("interviewee_id")
+    @interview.interview_date = params.fetch("interview_date")
+
+    if @interview.valid?
+      @interview.save
+
+      redirect_to("/interviews/#{@interview.id}", :notice => "Interview updated successfully.")
+    else
+      render("interview_templates/edit_form_with_errors.html.erb")
+    end
+  end
+
+  def destroy_row
+    @interview = Interview.find(params.fetch("id_to_remove"))
+
+    @interview.destroy
+
+    redirect_to("/interviews", :notice => "Interview deleted successfully.")
+  end
+end

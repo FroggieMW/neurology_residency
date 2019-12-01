@@ -1,0 +1,57 @@
+<h1>
+  Add a new interview
+</h1>
+
+
+<hr>
+
+<!-- Form interview start -->
+<form action="/create_interview" method="post">
+<!-- Form interview end -->
+
+  <!-- Label and input for residency_program_id start -->
+  <div class="form-group">
+    <label for="residency_program_id">
+      Residency program
+    </label>
+
+    <!-- Input for residency_program_id start -->
+    <input type="text" id="residency_program_id" name="residency_program_id" class="form-control">
+    <!-- Input for residency_program_id end -->
+  </div>
+  <!-- Label and input for residency_program_id end -->
+
+  <!-- Label and input for interviewee_id start -->
+  <div class="form-group">
+    <label for="interviewee_id">
+      Interviewee
+    </label>
+
+    <!-- Input for interviewee_id start -->
+    <input type="text" id="interviewee_id" name="interviewee_id" class="form-control">
+    <!-- Input for interviewee_id end -->
+  </div>
+  <!-- Label and input for interviewee_id end -->
+
+  <!-- Label and input for interview_date start -->
+  <div class="form-group">
+    <label for="interview_date">
+      Interview date
+    </label>
+
+    <!-- Input for interview_date start -->
+    <input type="text" id="interview_date" name="interview_date" class="form-control">
+    <!-- Input for interview_date end -->
+  </div>
+  <!-- Label and input for interview_date end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create interview
+  </button>
+</form>
+
+<hr>
+
+<a href="/interviews">
+  Go back
+</a>

@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Interview resource:
+
+  # CREATE
+  get("/interviews/new", { :controller => "interviews", :action => "new_form" })
+  post("/create_interview", { :controller => "interviews", :action => "create_row" })
+
+  # READ
+  get("/interviews", { :controller => "interviews", :action => "index" })
+  get("/interviews/:id_to_display", { :controller => "interviews", :action => "show" })
+
+  # UPDATE
+  get("/interviews/:prefill_with_id/edit", { :controller => "interviews", :action => "edit_form" })
+  post("/update_interview/:id_to_modify", { :controller => "interviews", :action => "update_row" })
+
+  # DELETE
+  get("/delete_interview/:id_to_remove", { :controller => "interviews", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Residency program resource:
 
   # CREATE

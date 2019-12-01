@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Interview #<%= @interview.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/interviews" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link interview start -->
+      <div class="col">
+        <a href="/interviews/<%= @interview.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit interview
+        </a>
+      </div>
+      <!-- Edit link interview end -->
+
+      <!-- Delete link interview start -->
+      <div class="col">
+        <a href="/delete_interview/<%= @interview.id %>" class="btn btn-block btn-outline-secondary">
+          Delete interview
+        </a>
+      </div>
+      <!-- Delete link interview end -->
+    </div>
+
+    <dl>
+      <dt>
+        Residency program
+      </dt>
+      <!-- Display residency_program_id start -->
+      <dd>
+        <%= @interview.residency_program_id %>
+      </dd>
+      <!-- Display residency_program_id end -->
+
+      <dt>
+        Interviewee
+      </dt>
+      <!-- Display interviewee_id start -->
+      <dd>
+        <%= @interview.interviewee_id %>
+      </dd>
+      <!-- Display interviewee_id end -->
+
+      <dt>
+        Interview date
+      </dt>
+      <!-- Display interview_date start -->
+      <dd>
+        <%= @interview.interview_date %>
+      </dd>
+      <!-- Display interview_date end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@interview.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@interview.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

@@ -1,0 +1,8 @@
+class Interview < ApplicationRecord
+  # Direct associations
+
+  # Indirect associations
+
+  # Validations
+
+end
