@@ -1,4 +1,6 @@
 ActiveAdmin.register ResidencyProgram do
+
+ permit_params :state, :program_name
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
