@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_interview_invite/:id_to_remove", { :controller => "interview_invites", :action => "destroy_row" })
+  get("/delete_interview_invite_from_residency_program/:id_to_remove", { :controller => "interview_invites", :action => "destroy_row_from_residency_program" })
+  get("/delete_interview_invite_from_author/:id_to_remove", { :controller => "interview_invites", :action => "destroy_row_from_author" })
 
   #------------------------------
 
@@ -37,6 +39,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_interview/:id_to_remove", { :controller => "interviews", :action => "destroy_row" })
+  get("/delete_interview_from_residency_program/:id_to_remove", { :controller => "interviews", :action => "destroy_row_from_residency_program" })
+  get("/delete_interview_from_interviewee/:id_to_remove", { :controller => "interviews", :action => "destroy_row_from_interviewee" })
 
   #------------------------------
 

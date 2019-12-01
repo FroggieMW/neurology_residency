@@ -55,6 +55,22 @@ class InterviewInvitesController < ApplicationController
     end
   end
 
+  def destroy_row_from_author
+    @interview_invite = InterviewInvite.find(params.fetch("id_to_remove"))
+
+    @interview_invite.destroy
+
+    redirect_to("/users/#{@interview_invite.invitee_id}", notice: "InterviewInvite deleted successfully.")
+  end
+
+  def destroy_row_from_residency_program
+    @interview_invite = InterviewInvite.find(params.fetch("id_to_remove"))
+
+    @interview_invite.destroy
+
+    redirect_to("/residency_programs/#{@interview_invite.residency_program_id}", notice: "InterviewInvite deleted successfully.")
+  end
+
   def destroy_row
     @interview_invite = InterviewInvite.find(params.fetch("id_to_remove"))
 

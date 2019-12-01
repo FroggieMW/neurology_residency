@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Interview Invites
+
+    <a data-toggle="collapse" href="#user_interview_invites_new_form">
+      Add interview invite
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.interview_invites.each do |interview_invite| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/interview_invites/<%= interview_invite.id %>">
+          <%= interview_invite.residency_program_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>
