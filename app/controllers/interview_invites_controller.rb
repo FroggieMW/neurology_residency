@@ -1,6 +1,7 @@
 class InterviewInvitesController < ApplicationController
   def index
-    @interview_invites = InterviewInvite.page(params[:page]).per(10)
+    @q = InterviewInvite.ransack(params[:q])
+    @interview_invites = @q.result(:distinct => true).includes(:author, :residency_program).page(params[:page]).per(10)
 
     render("interview_invite_templates/index.html.erb")
   end

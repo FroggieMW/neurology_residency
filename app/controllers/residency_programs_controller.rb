@@ -1,6 +1,7 @@
 class ResidencyProgramsController < ApplicationController
   def index
-    @residency_programs = ResidencyProgram.page(params[:page]).per(10)
+    @q = ResidencyProgram.ransack(params[:q])
+    @residency_programs = @q.result(:distinct => true).includes(:interviews, :interview_invites).page(params[:page]).per(10)
 
     render("residency_program_templates/index.html.erb")
   end
