@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "residency_programs#index"
   # Routes for the Interview invite resource:
 
   # CREATE
