@@ -4,6 +4,8 @@ RSpec.describe Interview, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:residency_program) }
+
     it { should belong_to(:interviewee) }
 
     end

@@ -4,6 +4,8 @@ RSpec.describe ResidencyProgram, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:interviews) }
+
     end
 
     describe "InDirect Associations" do
