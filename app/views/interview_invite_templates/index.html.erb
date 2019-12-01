@@ -62,7 +62,11 @@
 
         <!-- Display interview_invite.residency_program_id start -->
         <td>
-          <%= interview_invite.residency_program.state %>
+          <% if interview_invite.residency_program.present? %>
+            <a href="/residency_programs/<%= interview_invite.residency_program.id %>">
+              <%= interview_invite.residency_program.state %>
+            </a>
+          <% end %>
         </td>
         <!-- Display interview_invite.residency_program_id end -->
 
@@ -74,7 +78,11 @@
 
         <!-- Display interview_invite.invitee_id start -->
         <td>
-          <%= interview_invite.author.email %>
+          <% if interview_invite.author.present? %>
+            <a href="/users/<%= interview_invite.author.id %>">
+              <%= interview_invite.author.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display interview_invite.invitee_id end -->
 

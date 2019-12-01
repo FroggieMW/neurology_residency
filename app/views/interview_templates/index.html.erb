@@ -62,13 +62,21 @@
 
         <!-- Display interview.residency_program_id start -->
         <td>
-          <%= interview.residency_program.state %>
+          <% if interview.residency_program.present? %>
+            <a href="/residency_programs/<%= interview.residency_program.id %>">
+              <%= interview.residency_program.state %>
+            </a>
+          <% end %>
         </td>
         <!-- Display interview.residency_program_id end -->
 
         <!-- Display interview.interviewee_id start -->
         <td>
-          <%= interview.interviewee.email %>
+          <% if interview.interviewee.present? %>
+            <a href="/users/<%= interview.interviewee.id %>">
+              <%= interview.interviewee.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display interview.interviewee_id end -->
 

@@ -34,7 +34,11 @@
       </dt>
       <!-- Display residency_program_id start -->
       <dd>
-        <%= @interview_invite.residency_program_id %>
+        <% if @interview_invite.residency_program.present? %>
+          <a href="/residency_programs/<%= @interview_invite.residency_program_id %>">
+            <%= @interview_invite.residency_program.state %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display residency_program_id end -->
 
@@ -52,7 +56,11 @@
       </dt>
       <!-- Display invitee_id start -->
       <dd>
-        <%= @interview_invite.invitee_id %>
+        <% if @interview_invite.author.present? %>
+          <a href="/users/<%= @interview_invite.invitee_id %>">
+            <%= @interview_invite.author.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display invitee_id end -->
 
