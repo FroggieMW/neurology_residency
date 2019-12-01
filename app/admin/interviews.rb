@@ -1,4 +1,6 @@
 ActiveAdmin.register Interview do
+
+ permit_params :residency_program_id, :interviewee_id, :interview_date
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
