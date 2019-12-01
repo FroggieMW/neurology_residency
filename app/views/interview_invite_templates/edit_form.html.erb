@@ -4,45 +4,31 @@
 
 <hr>
 
-<!-- Form interview_invite start -->
 <form action="/update_interview_invite/<%= @interview_invite.id %>" method="post">
-<!-- Form interview_invite end -->
 
-  <!-- Label and input for residency_program_id start -->
   <div class="form-group">
     <label for="residency_program_id">
       Residency program
     </label>
 
-    <!-- Input for residency_program_id start -->
     <%= select_tag(:residency_program_id, options_from_collection_for_select(ResidencyProgram.all, :id, :state, @interview_invite.residency_program_id), :class => "form-control") %>
-    <!-- Input for residency_program_id end -->
   </div>
-  <!-- Label and input for residency_program_id end -->
 
-  <!-- Label and input for invite_received_date start -->
   <div class="form-group">
     <label for="invite_received_date">
       Invite received date
     </label>
 
-    <!-- Input for invite_received_date start -->
     <input type="text" id="invite_received_date" name="invite_received_date" class="form-control" value="<%= @interview_invite.invite_received_date %>">
-    <!-- Input for invite_received_date end -->
   </div>
-  <!-- Label and input for invite_received_date end -->
 
-  <!-- Label and input for invitee_id start -->
   <div class="form-group">
     <label for="invitee_id">
       Invitee
     </label>
 
-    <!-- Input for invitee_id start -->
     <%= select_tag(:invitee_id, options_from_collection_for_select(User.all, :id, :email, @interview_invite.invitee_id), :class => "form-control") %>
-    <!-- Input for invitee_id end -->
   </div>
-  <!-- Label and input for invitee_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update interview invite

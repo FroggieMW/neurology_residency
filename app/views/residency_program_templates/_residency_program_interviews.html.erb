@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @residency_program.interviews.each do |interview| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/interviews/<%= interview.id %>">
           <%= interview.residency_program_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_user == interview.interviewee %>
           <a href="/delete_interview_from_residency_program/<%= interview.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="residency_program_interviews_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "residency_program_templates/residency_program_interviews_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

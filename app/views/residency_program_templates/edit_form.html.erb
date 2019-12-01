@@ -4,33 +4,23 @@
 
 <hr>
 
-<!-- Form residency_program start -->
 <form action="/update_residency_program/<%= @residency_program.id %>" method="post">
-<!-- Form residency_program end -->
 
-  <!-- Label and input for state start -->
   <div class="form-group">
     <label for="state">
       State
     </label>
 
-    <!-- Input for state start -->
     <input type="text" id="state" name="state" class="form-control" value="<%= @residency_program.state %>">
-    <!-- Input for state end -->
   </div>
-  <!-- Label and input for state end -->
 
-  <!-- Label and input for program_name start -->
   <div class="form-group">
     <label for="program_name">
       Program name
     </label>
 
-    <!-- Input for program_name start -->
     <input type="text" id="program_name" name="program_name" class="form-control" value="<%= @residency_program.program_name %>">
-    <!-- Input for program_name end -->
   </div>
-  <!-- Label and input for program_name end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update residency program

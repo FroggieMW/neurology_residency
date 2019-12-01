@@ -11,64 +11,51 @@
         </a>
       </div>
 
-      <!-- Edit link residency_program start -->
       <div class="col">
         <a href="/residency_programs/<%= @residency_program.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit residency program
         </a>
       </div>
-      <!-- Edit link residency_program end -->
 
-      <!-- Delete link residency_program start -->
       <div class="col">
         <a href="/delete_residency_program/<%= @residency_program.id %>" class="btn btn-block btn-outline-secondary">
           Delete residency program
         </a>
       </div>
-      <!-- Delete link residency_program end -->
     </div>
 
     <dl>
       <dt>
         State
       </dt>
-      <!-- Display state start -->
       <dd>
         <%= @residency_program.state %>
       </dd>
-      <!-- Display state end -->
 
       <dt>
         Program name
       </dt>
-      <!-- Display program_name start -->
       <dd>
         <%= @residency_program.program_name %>
       </dd>
-      <!-- Display program_name end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@residency_program.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@residency_program.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "residency_program_templates/residency_program_interviews" %>
@@ -80,4 +67,3 @@
     <%= render partial: "residency_program_templates/residency_program_interview_invites" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

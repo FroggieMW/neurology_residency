@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link interview_invite start -->
       <div class="col">
         <a href="/interview_invites/<%= @interview_invite.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit interview invite
         </a>
       </div>
-      <!-- Edit link interview_invite end -->
 
-      <!-- Delete link interview_invite start -->
       <div class="col">
         <a href="/delete_interview_invite/<%= @interview_invite.id %>" class="btn btn-block btn-outline-secondary">
           Delete interview invite
         </a>
       </div>
-      <!-- Delete link interview_invite end -->
     </div>
 
     <dl>
       <dt>
         Residency program
       </dt>
-      <!-- Display residency_program_id start -->
       <dd>
         <% if @interview_invite.residency_program.present? %>
           <a href="/residency_programs/<%= @interview_invite.residency_program_id %>">
@@ -40,21 +35,17 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display residency_program_id end -->
 
       <dt>
         Invite received date
       </dt>
-      <!-- Display invite_received_date start -->
       <dd>
         <%= @interview_invite.invite_received_date %>
       </dd>
-      <!-- Display invite_received_date end -->
 
       <dt>
         Invitee
       </dt>
-      <!-- Display invitee_id start -->
       <dd>
         <% if @interview_invite.author.present? %>
           <a href="/users/<%= @interview_invite.invitee_id %>">
@@ -62,28 +53,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display invitee_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@interview_invite.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@interview_invite.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

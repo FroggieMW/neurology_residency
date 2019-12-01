@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "interview_invite_templates/interview_invites_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -58,13 +54,10 @@
 
       <% @interview_invites.each do |interview_invite| %>
       <tr>
-        <!-- Display interview_invite.id start -->
         <td>
           <%= interview_invite.id %>
         </td>
-        <!-- Display interview_invite.id end -->
 
-        <!-- Display interview_invite.residency_program_id start -->
         <td>
           <% if interview_invite.residency_program.present? %>
             <a href="/residency_programs/<%= interview_invite.residency_program.id %>">
@@ -72,15 +65,11 @@
             </a>
           <% end %>
         </td>
-        <!-- Display interview_invite.residency_program_id end -->
 
-        <!-- Display interview_invite.invite_received_date start -->
         <td>
           <%= interview_invite.invite_received_date %>
         </td>
-        <!-- Display interview_invite.invite_received_date end -->
 
-        <!-- Display interview_invite.invitee_id start -->
         <td>
           <% if interview_invite.author.present? %>
             <a href="/users/<%= interview_invite.author.id %>">
@@ -88,19 +77,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display interview_invite.invitee_id end -->
 
-        <!-- Display interview_invite.created_at start -->
         <td>
           <%= time_ago_in_words(interview_invite.created_at) %> ago
         </td>
-        <!-- Display interview_invite.created_at end -->
 
-        <!-- Display interview_invite.updated_at start -->
         <td>
           <%= time_ago_in_words(interview_invite.updated_at) %> ago
         </td>
-        <!-- Display interview_invite.updated_at end -->
 
         <td>
           <a href="/interview_invites/<%= interview_invite.id %>">

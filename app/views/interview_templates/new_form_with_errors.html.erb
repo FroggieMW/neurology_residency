@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @interview.present? %>
   <% if @interview.errors.any? %>
     <% @interview.errors.full_messages.each do |message| %>
@@ -16,39 +15,25 @@
 
 <hr>
 
-<!-- Form interview start -->
 <form action="/create_interview" method="post">
-<!-- Form interview end -->
 
-  <!-- Label and input for residency_program_id start -->
   <div class="form-group">
     <label for="residency_program_id">
       Residency program
     </label>
 
-    <!-- Input for residency_program_id start -->
     <%= select_tag(:residency_program_id, options_from_collection_for_select(ResidencyProgram.all, :id, :state, @interview.residency_program_id), :class => "form-control") %>
-    <!-- Input for residency_program_id end -->
   </div>
-  <!-- Label and input for residency_program_id end -->
 
-  <!-- Label and input for interviewee_id start -->
-  <!-- Input for "interviewee_id" start -->
   <input type="hidden" name="interviewee_id" value="<%= current_user.id %>">
-  <!-- Input for "interviewee_id" end -->
-  <!-- Label and input for interviewee_id end -->
 
-  <!-- Label and input for interview_date start -->
   <div class="form-group">
     <label for="interview_date">
       Interview date
     </label>
 
-    <!-- Input for interview_date start -->
     <input type="text" id="interview_date" name="interview_date" class="form-control" value="<%= @interview.interview_date %>">
-    <!-- Input for interview_date end -->
   </div>
-  <!-- Label and input for interview_date end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create interview
