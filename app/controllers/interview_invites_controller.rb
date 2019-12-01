@@ -1,6 +1,6 @@
 class InterviewInvitesController < ApplicationController
   def index
-    @interview_invites = InterviewInvite.all
+    @interview_invites = InterviewInvite.page(params[:page]).per(10)
 
     render("interview_invite_templates/index.html.erb")
   end

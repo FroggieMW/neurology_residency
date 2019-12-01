@@ -10,7 +10,7 @@ class InterviewsController < ApplicationController
   end
 
   def index
-    @interviews = Interview.all
+    @interviews = Interview.page(params[:page]).per(10)
 
     render("interview_templates/index.html.erb")
   end

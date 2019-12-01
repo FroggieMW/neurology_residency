@@ -1,6 +1,6 @@
 class ResidencyProgramsController < ApplicationController
   def index
-    @residency_programs = ResidencyProgram.all
+    @residency_programs = ResidencyProgram.page(params[:page]).per(10)
 
     render("residency_program_templates/index.html.erb")
   end
