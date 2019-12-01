@@ -59,7 +59,7 @@ class InterviewsController < ApplicationController
     @interview = Interview.find(params.fetch("id_to_modify"))
 
     @interview.residency_program_id = params.fetch("residency_program_id")
-    @interview.interviewee_id = params.fetch("interviewee_id")
+    
     @interview.interview_date = params.fetch("interview_date")
 
     if @interview.valid?

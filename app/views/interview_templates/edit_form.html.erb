@@ -21,15 +21,6 @@
   <!-- Label and input for residency_program_id end -->
 
   <!-- Label and input for interviewee_id start -->
-  <div class="form-group">
-    <label for="interviewee_id">
-      Interviewee
-    </label>
-
-    <!-- Input for interviewee_id start -->
-    <%= select_tag(:interviewee_id, options_from_collection_for_select(User.all, :id, :email, @interview.interviewee_id), :class => "form-control") %>
-    <!-- Input for interviewee_id end -->
-  </div>
   <!-- Label and input for interviewee_id end -->
 
   <!-- Label and input for interview_date start -->
