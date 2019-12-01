@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_interview_from_residency_program/<%= interview.id %>">
-          Delete
-        </a>
+        <%if current_user == interview.interviewee %>
+          <a href="/delete_interview_from_residency_program/<%= interview.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>

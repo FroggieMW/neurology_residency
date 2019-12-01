@@ -13,17 +13,21 @@
 
       <!-- Edit link interview start -->
       <div class="col">
-        <a href="/interviews/<%= @interview.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit interview
-        </a>
+        <% if current_user == @interview.interviewee %>
+          <a href="/interviews/<%= @interview.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit interview
+          </a>
+        <% end %>
       </div>
       <!-- Edit link interview end -->
 
       <!-- Delete link interview start -->
       <div class="col">
-        <a href="/delete_interview/<%= @interview.id %>" class="btn btn-block btn-outline-secondary">
-          Delete interview
-        </a>
+        <% if current_user == @interview.interviewee %>
+          <a href="/delete_interview/<%= @interview.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete interview
+          </a>
+        <% end %>
       </div>
       <!-- Delete link interview end -->
     </div>
