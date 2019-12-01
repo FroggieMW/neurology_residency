@@ -1,0 +1,56 @@
+<!-- Validation failure messages -->
+<% if @residency_program.present? %>
+  <% if @residency_program.errors.any? %>
+    <% @residency_program.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new residency program
+</h1>
+
+
+<hr>
+
+<!-- Form residency_program start -->
+<form action="/create_residency_program" method="post">
+<!-- Form residency_program end -->
+
+  <!-- Label and input for state start -->
+  <div class="form-group">
+    <label for="state">
+      State
+    </label>
+
+    <!-- Input for state start -->
+    <input type="text" id="state" name="state" class="form-control" value="<%= @residency_program.state %>">
+    <!-- Input for state end -->
+  </div>
+  <!-- Label and input for state end -->
+
+  <!-- Label and input for program_name start -->
+  <div class="form-group">
+    <label for="program_name">
+      Program name
+    </label>
+
+    <!-- Input for program_name start -->
+    <input type="text" id="program_name" name="program_name" class="form-control" value="<%= @residency_program.program_name %>">
+    <!-- Input for program_name end -->
+  </div>
+  <!-- Label and input for program_name end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create residency program
+  </button>
+</form>
+
+<hr>
+
+<a href="/residency_programs">
+  Go back
+</a>
